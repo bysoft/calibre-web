@@ -72,4 +72,14 @@ $("#have_read_cb").on("change", function() {
                 }, 10000);
             });
     });
+    
+$('.tags a').each(function(index, item) {
+  if (/emby/.exec(item.innerHTML) !== null) {
+    let idNum = item.innerHTML.replace('emby','')
+    $(item).parent().append(`<a href='http://by.dynamic-dns.net:8096/web/index.html#!/itemdetails.html?id=${idNum}'>audiobook</a>`)
+    $(item).hide()
+  }
+})    
+    
+    
 })();
